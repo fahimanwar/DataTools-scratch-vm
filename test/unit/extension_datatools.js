@@ -36,22 +36,24 @@ test('Removing a Data file from the extension', t =>{
     t.end();
 });
 
-// Added a data file and duplicate it using the default value and a new name
-test('Duplicate a dataset', t => {
-    let runtime = new Runtime();
-    let blocks = new data(runtime);
-    blocks.addDataFile('fileName', dataset);
-    blocks.duplicateDataset({ORIGINAL: 'fileName', NEW: ' '});
-    t.equal(blocks.getFileNames()[1], 'fileName (1)');
-    t.equal(blocks._files['fileName'][1].age, blocks._files['fileName (1)'][1].age);
-    t.equal(blocks._files['fileName'][0].name, blocks._files['fileName (1)'][0].name);
+/*
+    // Added a data file and duplicate it using the default value and a new name
+    test('Duplicate a dataset', t => {
+        let runtime = new Runtime();
+        let blocks = new data(runtime);
+        blocks.addDataFile('fileName', dataset);
+        blocks.duplicateDataset({ORIGINAL: 'fileName', NEW: ' '});
+        t.equal(blocks.getFileNames()[1], 'fileName (1)');
+        t.equal(blocks._files['fileName'][1].age, blocks._files['fileName (1)'][1].age);
+        t.equal(blocks._files['fileName'][0].name, blocks._files['fileName (1)'][0].name);
 
-    blocks.duplicateDataset({ORIGINAL: 'fileName', NEW: 'test'});
-    t.equal(blocks.getFileNames()[2], 'test');
-    t.equal(blocks._files['fileName'][1].age, blocks._files['test'][1].age);
-    t.equal(blocks._files['fileName'][0].name, blocks._files['test'][0].name);
-    t.end();
-});
+        blocks.duplicateDataset({ORIGINAL: 'fileName', NEW: 'test'});
+        t.equal(blocks.getFileNames()[2], 'test');
+        t.equal(blocks._files['fileName'][1].age, blocks._files['test'][1].age);
+        t.equal(blocks._files['fileName'][0].name, blocks._files['test'][0].name);
+        t.end();
+    });
+*/
 
 // Getting the row count of dataset
 test('Getting the row count of a dataset', t=> {
