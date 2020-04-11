@@ -59,6 +59,7 @@ test('Testing generateColumnData for menu', t =>{
     t.end();
 });
 
+//Test
 // updateDataFileFromTable called when the file is edited in the file view menu
 test('Changing a file in the file view', t =>{
     blocks.addDataFile('fileName', dataset);
