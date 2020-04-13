@@ -15,6 +15,42 @@ tap.beforeEach(done => {
     done();
 });
 
+// ******** Smoke Tests *********
+
+// ***** Import Smoke Test ******
+test('Importing a Data File Smoke Test - File Name', test => {
+    blocks.addDataFile(fileName, dataset);
+    let fileNames = blocks.getFileNames();
+    test.strictEqual(fileNames[0], 'fileName');
+    let output = blocks.getDataFileContents(fileName);
+    test.equal(blocks._fileBlocks[0].text, 'fileName');
+    test.equal(blocks._fileBlocks[0].opcode, 'file_fileName');
+    test.end();
+});
+
+test('Importing a Data File Smoke Test - Name', test => {
+    blocks.addDataFile(fileName, dataset);
+    let fileNames = blocks.getFileNames();
+    test.strictEqual(fileNames[0], 'fileName');
+    let output = blocks.getDataFileContents(fileName);
+    test.equal(output[0].name, dataset[0].name);
+    test.end();
+});
+
+test('Importing a Data File Smoke Test - Age', test => {
+    blocks.addDataFile(fileName, dataset);
+    let fileNames = blocks.getFileNames();
+    test.strictEqual(fileNames[0], 'fileName');
+    let output = blocks.getDataFileContents(fileName);
+    test.equal(output[0].age, dataset[0].age);
+    test.equal(blocks._fileBlocks[0].text, 'fileName');
+    test.equal(blocks._fileBlocks[0].opcode, 'file_fileName');
+    test.end();
+});
+
+
+
+
 // Tests adding a data file
 test('Adding Data File to extension', t => {
     blocks.addDataFile(fileName, dataset);
