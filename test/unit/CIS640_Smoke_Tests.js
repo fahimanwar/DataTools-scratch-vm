@@ -1,3 +1,4 @@
+require('tap').mochaGlobals();
 const tap = require('tap');
 const test = tap.test;
 const data = require('../../src/extensions/data_tools/index.js');
