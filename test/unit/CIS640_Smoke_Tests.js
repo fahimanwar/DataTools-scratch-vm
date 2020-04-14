@@ -85,14 +85,21 @@ test('Modifying a Row Edge Case - Row Less Than 1', t=>{
 });
 
 // ***** Create Smoke Test ******
-test('Create Blank Row', t => {
+test('Create Blank Row - 0', t => {
     blocks.addDataFile('fileName', dataset);
     let arg = { FILENAME: 'fileName'};
     blocks.addDataFileRow(arg);
     let args = {COLUMN: '[fileName] age', ROW: 4};
     let result = blocks.getColumnAtRow(args);
     t.strictEqual(0, result);
-    args = {COLUMN: '[fileName] name', ROW: 4};
+    t.end();
+});
+
+test('Create Blank Row', t => {
+    blocks.addDataFile('fileName', dataset);
+    let arg = { FILENAME: 'fileName'};
+    blocks.addDataFileRow(arg);
+    let args = {COLUMN: '[fileName] name', ROW: 4};
     result = blocks.getColumnAtRow(args);
     t.strictEqual('', result);
     t.end();
