@@ -95,7 +95,7 @@ test('Create Blank Row - 0', t => {
     t.end();
 });
 
-test('Create Blank Row', t => {
+test('Create Blank Row - Empty String', t => {
     blocks.addDataFile('fileName', dataset);
     let arg = { FILENAME: 'fileName'};
     blocks.addDataFileRow(arg);
