@@ -5,6 +5,7 @@ const data = require('../../src/extensions/data_tools/index.js');
 const Runtime = require('../../src/engine/runtime');
 
 const dataset = [ {name:'mikey', age:25 }, {name:'joe', age:36}, {name:'steve', age:85}];
+const dataset2 = [];
 const fileName = "fileName";
 
 let runtime;
