@@ -36,9 +36,14 @@ test('Importing a Data File - Name', test => {
     let fileNames = blocks.getFileNames();
     let output = blocks.getDataFileContents(fileName);
     blocks.addDataFile(name, dataset2);
-    //Checks for first condition in addDataFile (length < 1)
+    //Checks for first if condition in addDataFile (length < 1)
     test.equal(0, dataset2.length);
     
+    //Checks for second if condition
+    test.equal('name', this.generateFileDisplayName(name));
+    test.equal(this._files[name], 'name');
+    
+    //Checks the rest of the the statements in addDataFile
     test.equal(output[0].name, dataset[0].name);
     test.end();
 });
