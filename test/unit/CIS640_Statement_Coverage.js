@@ -24,7 +24,7 @@ test('Removing a Data file from the extension', t =>{
     blocks.addDataFile(fileName, dataset);
     let emptyBool = blocks.removeDataFile('file');
     let fileBool = blocks.removeDataFile('fileName');
-    t.equal(fileBool, false);
+    t.equal(fileBool, true);
     t.equal(emptyBool, false);
     t.end();
 });
