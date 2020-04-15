@@ -28,3 +28,15 @@ test('Removing a Data file from the extension', t =>{
     t.equal(emptyBool, false);
     t.end();
 });
+
+test('Importing a Data File - Name', test => {
+    blocks.addDataFile(fileName, dataset);
+    let fileNames = blocks.getFileNames();
+    let output = blocks.getDataFileContents(fileName);
+    blocks.addDataFile(name, dataset2);
+    //Checks for first condition in addDataFile (length < 1)
+    test.equal(0, dataset2.length);
+    
+    test.equal(output[0].name, dataset[0].name);
+    test.end();
+});
