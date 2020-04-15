@@ -18,8 +18,13 @@ tap.beforeEach(done => {
 
 
 // ******* Statement Coverage Tests *******
+
+// ******* Statement Coverage Test - Removing Data File *******
 test('Removing a Data file from the extension', t =>{
-let bool = blocks.removeDataFile('file');
-t.equal(bool, false);
-t.end();
+    blocks.addDataFile(fileName, dataset);
+    let emptyBool = blocks.removeDataFile('file');
+    let fileBool = blocks.removeDataFile('fileName');
+    t.equal(fileBool, false);
+    t.equal(emptyBool, false);
+    t.end();
 });
