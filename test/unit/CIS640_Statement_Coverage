@@ -1,1 +1,12 @@
+require('tap').mochaGlobals();
 
+
+// ******* Statement Coverage Tests *******
+
+test('Importing a Data File - Age', test => {
+    blocks.addDataFile(fileName, dataset);
+    let fileNames = blocks.getFileNames();
+    let output = blocks.getDataFileContents(fileName);
+    test.equal(output[0].age, dataset[0].age);
+    test.end();
+});
