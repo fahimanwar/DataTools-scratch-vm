@@ -41,7 +41,6 @@ test('addDataFile - Statement Coverage Test', test => {
     
     //Checks for second if condition
     test.equal('name', blocks.generateFileDisplayName(name));
-    //test.equal(this._files[name], 'name');
     
     //Checks the rest of the the statements in addDataFile
     test.equal(output[0].name, dataset[0].name);
