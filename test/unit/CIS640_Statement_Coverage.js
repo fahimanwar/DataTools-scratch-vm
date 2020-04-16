@@ -92,10 +92,10 @@ test('addDataFileRow', t => {
     runtime = new Runtime();
     blocks = new data(runtime);
     
+    //Goes through to the bottom of the method
     blocks.addDataFile('fileName', dataset);
     let arg3 = { FILENAME: 'fileName'};
     blocks.addDataFileRow(arg3);
-    
     let args = {COLUMN: '[fileName] age', ROW: 4};
     let result = blocks.getColumnAtRow(args);
     t.strictEqual(0, result);
@@ -103,70 +103,18 @@ test('addDataFileRow', t => {
     result = blocks.getColumnAtRow(args);
     t.strictEqual('', result);
     
+    //Removes working fileName
     blocks.removeDataFile('fileName');
-    blocks.addDataFile('fileName', dataset2);
-    let arg = { FILENAME: 'fileName'};
-    
-    //Adds fileName with empty data
-    blocks.addDataFileRow(arg);
     
     //Checks for first if statement to see if returns
     let arg2 = { FILENAME: ''}; 
     blocks.addDataFileRow(arg2);
     
-   
+    //Adds fileName with empty data
+    blocks.addDataFile('fileName', dataset2);
+    let arg = { FILENAME: 'fileName'};
+    blocks.addDataFileRow(arg);
+    
     t.end();
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
