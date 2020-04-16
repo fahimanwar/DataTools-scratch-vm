@@ -51,12 +51,12 @@ test('addDataFile - Statement Coverage Test', test => {
 // ******* Statement Coverage Test - Getting Row Count *******
 test('getRowCount - Statement Coverage Test', test => {
     blocks.addDataFile(fileName, dataset);
-    let name = blocks.getFileNames();
-    let output = blocks.getDataFileContents(name);
-    blocks.addDataFile(name, name);
-    test.equal(0, name);
+    let args = blocks.getFileNames();
+    let output = blocks.getDataFileContents(args);
     
+    test.equal(0, args);
     
+    test.end();
 });
 
 
