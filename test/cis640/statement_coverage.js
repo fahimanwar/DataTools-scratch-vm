@@ -86,7 +86,6 @@ test('getColumnAtRow - Statement Coverage Test', t=> {
     
 // ******* Statement Coverage Test - Adding Data File To Row *******
 test('addDataFileRow', t => {
-    
     //Goes through to the bottom of the method
     blocks.addDataFile('fileName', dataset);
     let arg3 = { FILENAME: 'fileName'};
