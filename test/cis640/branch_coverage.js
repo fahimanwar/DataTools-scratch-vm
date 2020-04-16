@@ -7,8 +7,8 @@ const Runtime = require('../../src/engine/runtime');
 
 const dataset = [ 
     {name:'NameOne', age: 10 }, 
-    {name:'NameTwo', age: 10 }, 
-    {name:'NameThree', age: 10}
+    {name:'NameTwo', age: 11 }, 
+    {name:'NameThree', age: 12 }
 ];
 const fileName = "fileName";
 
