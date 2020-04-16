@@ -37,7 +37,7 @@ describe('#removeDataFile()', () => {
             result.should.equal(true);
         });
 
-        it('removes the filename', function() {
+        it('removes the file', function() {
             fileNames[0].should.equal("");
         });
     });
@@ -76,18 +76,18 @@ describe('#addDataFile()', () => {
 describe('#getRowCount()', () => {
     let result;
 
+    describe('when dataset does not exist', () => {
+        it('returns 0', function() {
+            result = blocks.getRowCount({FILENAME: fileName});
+            result.should.equal(0);
+        });
+    });
+
     describe('when dataset exists', () => {
         it('returns 3', function() {
             blocks.addDataFile(fileName, dataset);
             result = blocks.getRowCount({FILENAME: fileName});
             result.should.equal(3);
-        });
-    });
-
-    describe('when dataset does not exist', () => {
-        it('returns 0', function() {
-            result = blocks.getRowCount({FILENAME: fileName});
-            result.should.equal(0);
         });
     });
 });
@@ -103,7 +103,7 @@ describe('#generateColumnData()', () => {
         });
     });
 
-    describe('when no datafile exists', () => {
+    describe('when datafile exists', () => {
         beforeEach(function() {
             blocks.addDataFile(fileName, dataset);
         });
