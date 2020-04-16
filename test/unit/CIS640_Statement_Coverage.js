@@ -91,17 +91,7 @@ test('getColumnAtRow - Statement Coverage Test', t=> {
 test('addDataFileRow', t => {
     runtime = new Runtime();
     blocks = new data(runtime);
-    blocks.addDataFile('fileName', dataset2);
-    let arg = { FILENAME: 'fileName'};
     
-    //Adds fileName with empty data
-    blocks.addDataFileRow(arg);
-    
-    //Checks for first if statement to see if returns
-    let arg2 = { FILENAME: ''}; 
-    blocks.addDataFileRow(arg2);
-    
-    blocks.removeDataFile('fileName');
     blocks.addDataFile('fileName', dataset);
     let arg3 = { FILENAME: 'fileName'};
     blocks.addDataFileRow(arg3);
@@ -112,6 +102,19 @@ test('addDataFileRow', t => {
     args = {COLUMN: '[fileName] name', ROW: 4};
     result = blocks.getColumnAtRow(args);
     t.strictEqual('', result);
+    
+    blocks.removeDataFile('fileName');
+    blocks.addDataFile('fileName', dataset2);
+    let arg = { FILENAME: 'fileName'};
+    
+    //Adds fileName with empty data
+    blocks.addDataFileRow(arg);
+    
+    //Checks for first if statement to see if returns
+    let arg2 = { FILENAME: ''}; 
+    blocks.addDataFileRow(arg2);
+    
+   
     t.end();
 });
 
