@@ -103,8 +103,8 @@ test('addDataFileRow', t => {
     
     blocks.removeDataFile('fileName');
     blocks.addDataFile('fileName', dataset);
-    let arg = { FILENAME: 'fileName'};
-    blocks.addDataFileRow(arg);
+    let arg3 = { FILENAME: 'fileName'};
+    blocks.addDataFileRow(arg3);
     
     let args = {COLUMN: '[fileName] age', ROW: 4};
     let result = blocks.getColumnAtRow(args);
