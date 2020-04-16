@@ -78,7 +78,7 @@ test('getFileNames - Statement Coverage Test', t => {
     t.end();
 });
 
-// getColumnAtRow
+// ******* Statement Coverage Test - Getting Column At Row *******
 test('getColumnAtRow - Statement Coverage Test', t=> {
     let runtime = new Runtime();
     let blocks = new data(runtime);   
@@ -87,7 +87,7 @@ test('getColumnAtRow - Statement Coverage Test', t=> {
     t.end();
 });
     
-//
+// ******* Statement Coverage Test - Adding Data File To Row *******
 test('addDataFileRow', t => {
     runtime = new Runtime();
     blocks = new data(runtime);
