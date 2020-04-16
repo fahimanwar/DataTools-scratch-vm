@@ -97,8 +97,14 @@ test('addDataFileRow', t => {
     //Adds fileName with empty data
     blocks.addDataFileRow(arg);
     
+    //Checks for first if statement to see if returns
     let arg2 = { FILENAME: ''}; 
     blocks.addDataFileRow(arg2);
+    
+    blocks.removeDataFile('fileName');
+    blocks.addDataFile('fileName', dataset);
+    let arg = { FILENAME: 'fileName'};
+    blocks.addDataFileRow(arg);
     
     let args = {COLUMN: '[fileName] age', ROW: 4};
     let result = blocks.getColumnAtRow(args);
