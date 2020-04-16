@@ -57,7 +57,7 @@ test('getRowCount - Statement Coverage Test', test => {
     test.equal(0, FINALNAME);
     
     
-}};
+});
 
 
 
