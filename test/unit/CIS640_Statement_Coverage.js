@@ -82,7 +82,7 @@ test('getColumnAtRow - Statement Coverage Test', t=> {
     let runtime = new Runtime();
     let blocks = new data(runtime);   
     blocks.addDataFile(fileName, dataset2);
-    t.equal(blocks.getColumnAtRow, "");
+    t.equal(blocks.getColumnAtRow(dataset2), "");
     t.end();
 });
     
