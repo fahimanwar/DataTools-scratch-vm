@@ -31,6 +31,7 @@ test('removeDataFile - Statement Coverage Test', t =>{
     t.end();
 });
 
+// ******* Statement Coverage Test - Adding Data File *******
 test('addDataFile - Statement Coverage Test', test => {
     blocks.addDataFile(fileName, dataset);
     let fileNames = blocks.getFileNames();
@@ -46,3 +47,22 @@ test('addDataFile - Statement Coverage Test', test => {
     test.equal(output[0].name, dataset[0].name);
     test.end();
 });
+
+// ******* Statement Coverage Test - Getting Row Count *******
+test('getRowCount - Statement Coverage Test', test => {
+    blocks.addDataFile(fileName, dataset);
+    let FILENAME = blocks.getFileNames();
+    let output = blocks.getDataFileContents(FILENAME);
+    blocks.addDataFile(name, FINALNAME);
+    test.equal(0, FINALNAME);
+    
+    
+}};
+
+
+
+
+
+
+
+
