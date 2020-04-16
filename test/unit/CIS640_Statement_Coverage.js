@@ -37,6 +37,7 @@ test('addDataFile - Statement Coverage Test', test => {
     let fileNames = blocks.getFileNames();
     let output = blocks.getDataFileContents(fileName);
     blocks.addDataFile(name, dataset2);
+    
     //Checks for first if condition in addDataFile (length < 1)
     test.equal(0, dataset2.length);
     
@@ -49,26 +50,35 @@ test('addDataFile - Statement Coverage Test', test => {
 });
 
 // ******* Statement Coverage Test - Getting Row Count *******
-test('getRowCount - Statement Coverage Test', test => {
-    //blocks.addDataFile(fileName, dataset);
-    //let args = blocks.getFileNames();
-    //let output = blocks.getDataFileContents(args);
-    let emptyBool = blocks.removeDataFile('file');
-    let fileBool = blocks.removeDataFile('fileName');
-    //test.equal(0, args);
-    test.equal(emptyBool, false);
-    test.equal(fileBool, true);
-    test.end();
+test('getRowCount - Statement Coverage Test', t=> {
+    let runtime = new Runtime();
+    let blocks = new data(runtime);
+    
+    //Checks if getRowCount is able to retrieve files from fileName
+    //with an empty dataset
+    t.equal(blocks.getRowCount({FILENAME: 'fileName'}), 0);
+    
+    //Checks if getRowCount is able to retrieve files from fileName
+    //with a dataset and get the proper count
+    blocks.addDataFile('fileName', dataset);
+    t.equal(blocks.getRowCount({FILENAME: 'fileName'}), 3);
+    t.end();
 });
-
-
 
 // ******* Statement Coverage Test - Getting File Names *******
-test('getFileNames = Statement Coverage Test', test => {
-    let names = 
+test('getFileNames = Statement Coverage Test', t => {
+    let runtime = new Runtime();
+    let blocks = new data(runtime);
+    blocks.addDataFile(fileName, dataset);
+    let fileNames = blocks.getFileNames();
     
-    
+    //Making sure that the new array fileNames
+    //has gotten the file with 'fileName'
+    t.strictEqual(fileNames[0], 'fileName');
+    t.end();
 });
+    
+   
 
 
 
