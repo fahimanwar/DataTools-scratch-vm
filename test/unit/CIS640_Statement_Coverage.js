@@ -77,7 +77,8 @@ test('getFileNames - Statement Coverage Test', t => {
     t.strictEqual(fileNames[0], 'fileName');
     t.end();
 });
-    
+
+// getColumnAtRow
 test('getColumnAtRow - Statement Coverage Test', t=> {
     let runtime = new Runtime();
     let blocks = new data(runtime);   
@@ -86,8 +87,24 @@ test('getColumnAtRow - Statement Coverage Test', t=> {
     t.end();
 });
     
-
-
+//
+test('addDataFileRow', t => {
+    runtime = new Runtime();
+    blocks = new data(runtime);
+    blocks.addDataFile('fileName', dataset2);
+    let arg = { FILENAME: 'fileName'};
+    
+    //Adds fileName with empty data
+    blocks.addDataFileRow(arg);
+    
+    let args = {COLUMN: '[fileName] age', ROW: 4};
+    let result = blocks.getColumnAtRow(args);
+    t.strictEqual(0, result);
+    args = {COLUMN: '[fileName] name', ROW: 4};
+    result = blocks.getColumnAtRow(args);
+    t.strictEqual('', result);
+    t.end();
+});
 
 
 
