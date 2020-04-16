@@ -5,7 +5,11 @@ const test = tap.test;
 const data = require('../../src/extensions/data_tools/index.js');
 const Runtime = require('../../src/engine/runtime');
 
-const dataset = [ {name:'mikey', age:25 }, {name:'joe', age:36}, {name:'steve', age:85}];
+const dataset = [ 
+    {name:'NameOne', age: 10 }, 
+    {name:'NameTwo', age: 10 }, 
+    {name:'NameThree', age: 10}
+];
 const fileName = "fileName";
 
 let runtime;
