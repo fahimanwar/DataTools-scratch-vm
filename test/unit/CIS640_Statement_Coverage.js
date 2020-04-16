@@ -55,7 +55,7 @@ test('getRowCount - Statement Coverage Test', test => {
     //let output = blocks.getDataFileContents(args);
     let emptyBool = blocks.removeDataFile('file');
     //test.equal(0, args);
-    t.equal(emptyBool, false);
+    test.equal(emptyBool, false);
     test.end();
 });
 
