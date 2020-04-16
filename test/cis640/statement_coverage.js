@@ -55,9 +55,6 @@ test('addDataFile - Statement Coverage Test', test => {
 
 // ******* Statement Coverage Test - Getting Row Count *******
 test('getRowCount - Statement Coverage Test', t=> {
-    let runtime = new Runtime();
-    let blocks = new data(runtime);
-    
     //Checks if getRowCount is able to retrieve files from fileName
     //with an empty dataset
     t.equal(blocks.getRowCount({FILENAME: 'fileName'}), 0);
@@ -71,8 +68,6 @@ test('getRowCount - Statement Coverage Test', t=> {
 
 // ******* Statement Coverage Test - Getting File Names *******
 test('getFileNames - Statement Coverage Test', t => {
-    let runtime = new Runtime();
-    let blocks = new data(runtime);
     blocks.addDataFile(fileName, dataset);
     let fileNames = blocks.getFileNames();
     
@@ -84,8 +79,6 @@ test('getFileNames - Statement Coverage Test', t => {
 
 // ******* Statement Coverage Test - Getting Column At Row *******
 test('getColumnAtRow - Statement Coverage Test', t=> {
-    let runtime = new Runtime();
-    let blocks = new data(runtime);   
     blocks.addDataFile(fileName, dataset2);
     t.equal(blocks.getColumnAtRow(dataset2), "");
     t.end();
@@ -93,8 +86,6 @@ test('getColumnAtRow - Statement Coverage Test', t=> {
     
 // ******* Statement Coverage Test - Adding Data File To Row *******
 test('addDataFileRow', t => {
-    runtime = new Runtime();
-    blocks = new data(runtime);
     
     //Goes through to the bottom of the method
     blocks.addDataFile('fileName', dataset);
