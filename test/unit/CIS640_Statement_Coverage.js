@@ -54,7 +54,7 @@ test('getRowCount - Statement Coverage Test', test => {
     let name = blocks.getFileNames();
     let output = blocks.getDataFileContents(name);
     blocks.addDataFile(name, name);
-    test.equal(0, FINALNAME);
+    test.equal(0, name);
     
     
 });
